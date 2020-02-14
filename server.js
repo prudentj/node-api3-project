@@ -3,10 +3,12 @@ const express = require('express');
 //const helmet = require('helmet');
 const userRouter = require('./users/userRouter');
 const postRouter = require('./posts/postRouter');
+const cors = require('cors');
 const server = express();
 
 //global middleware
 server.use(express.json());
+server.use(cors());
 
 //routes- endpoints
 server.use('/api/users', logger, userRouter);
